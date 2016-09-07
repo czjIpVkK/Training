@@ -1,10 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.pages;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -56,13 +56,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
-      out.write("    <title>123</title>\r\n");
+      out.write("    <title>注册</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("<div>\r\n");
       out.write("    <div>\r\n");
       out.write("\r\n");
-      out.write("        <form id=\"slick-login\" action=\"/webtest/logins\" method=\"POST\" class=\"form-horizontal\">\r\n");
+      out.write("        <form id=\"slick-login\" action=\"/webtest/userreg\" method=\"POST\" class=\"form-horizontal\">\r\n");
       out.write("            <div style=\"color:red\">");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${msg}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("</div>\r\n");
@@ -74,18 +74,24 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("            <div class=\"form-group\">\r\n");
-      out.write("                <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">密码</label>\r\n");
+      out.write("                <label for=\"inputPassword2\" class=\"col-sm-2 control-label\">密码</label>\r\n");
       out.write("                <div class=\"col-sm-10\">\r\n");
-      out.write("                    <input  name=\"pass\" type=\"password\" class=\"form-control\" id=\"inputPassword3\" placeholder=\"密码\">\r\n");
+      out.write("                    <input  name=\"pass\" type=\"password\" class=\"form-control\" id=\"inputPassword2\" placeholder=\"密码\">\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"form-group\">\r\n");
+      out.write("                <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">请重复密码</label>\r\n");
+      out.write("                <div class=\"col-sm-10\">\r\n");
+      out.write("                    <input  name=\"pass1\" type=\"password\" class=\"form-control\" id=\"inputPassword3\" placeholder=\"密码\">\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("            <div class=\"form-group\">\r\n");
       out.write("                <div class=\"col-sm-offset-2 col-sm-10\">\r\n");
-      out.write("                    <button type=\"submit\" class=\"btn btn-default\">登录</button>\r\n");
+      out.write("                    <button type=\"submit\" class=\"btn btn-default\">注册</button>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </form>\r\n");
-      out.write("        <button onclick=\"window.location.href='http://localhost:8080/webtest/reg'\">注册</button>\r\n");
+      out.write("\r\n");
       out.write("    </div>\r\n");
       out.write("</div>\r\n");
       out.write("</body>\r\n");

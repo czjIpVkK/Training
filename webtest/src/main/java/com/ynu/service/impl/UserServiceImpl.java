@@ -13,8 +13,12 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    private UserMapper mapper;
+    private UserMapper userMapper;
     public User find(String u_name) {
-        return mapper.find(u_name);
+        return userMapper.find(u_name);
+    }
+
+    public void add(User user) {
+    userMapper.add(user);
     }
 }

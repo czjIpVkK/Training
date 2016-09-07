@@ -7,4 +7,6 @@ import com.ynu.dto.User;
 public interface UserMapper {
 
     public User find(String u_name);
+
+    public void add(User user);
 }

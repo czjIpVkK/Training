@@ -1,4 +1,5 @@
 com\ynu\dto\User.class
+com\ynu\UserRegister.class
 com\ynu\service\UserService.class
 com\ynu\mapper\UserMapper.class
 com\ynu\UserLogin.class

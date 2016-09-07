@@ -30,15 +30,12 @@ public class UserLogin {
             return "login";
         } else {
             User user = userService.find(u_name);
-            System.out.println("customer");
             if (user == null) {
-                System.out.println("yonghumingcuowu");
                 model.addAttribute("msg", "用户名或密码错误");
                 return "login";
             } else {
                 if (user.getuPassword().equals(u_PassWord)) {
-//					model.addAttribute("name",name);
-                    session.setAttribute("sessionname", u_name);
+                    session.setAttribute("sessionname", user.getuId());
                     return "success";
                 } else {
                     model.addAttribute("msg", "用户名或密码错误");
