@@ -14,7 +14,7 @@ public class User {
 
     private Date u_birthday;
 
-    private Boolean u_Gender;
+    private int u_Gender;
 
     private String u_description;
 
@@ -56,11 +56,11 @@ public class User {
         this.u_birthday = u_birthday;
     }
 
-    public Boolean u_Gender() {
+    public int u_Gender() {
         return u_Gender;
     }
 
-    public void setuGender(Boolean uGender) {
+    public void setuGender(int uGender) {
         this.u_Gender = u_Gender;
     }
 

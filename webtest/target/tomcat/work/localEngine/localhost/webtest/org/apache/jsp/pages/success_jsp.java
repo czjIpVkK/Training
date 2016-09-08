@@ -57,7 +57,19 @@ public final class success_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title>Title</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("登录成功\r\n");
+      out.write("登录成功~\r\n");
+      out.write("<form action=\"/webtest/UserDetails\" method=\"POST\">\r\n");
+      out.write("     <p>欢迎您\r\n");
+      out.write("         ");
+      out.print(request.getSession().getAttribute("sessionname"));
+      out.write("\r\n");
+      out.write("         !\r\n");
+      out.write("     </p>\r\n");
+      out.write("    <input name=\"userName\" type=\"hidden\" class=\"form-control\" value=\"");
+      out.print(request.getSession().getAttribute("sessionname"));
+      out.write("\">\r\n");
+      out.write("    <button type=\"submit\" class=\"btn btn-default\">更改用户信息</button>\r\n");
+      out.write("</form>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

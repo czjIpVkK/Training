@@ -11,6 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-登录成功
+登录成功~
+<form action="/webtest/UserDetails" method="POST">
+     <p>欢迎您
+         <%=request.getSession().getAttribute("sessionname")%>
+         !
+     </p>
+    <input name="userName" type="hidden" class="form-control" value="<%=request.getSession().getAttribute("sessionname")%>">
+    <button type="submit" class="btn btn-default">更改用户信息</button>
+</form>
 </body>
 </html>

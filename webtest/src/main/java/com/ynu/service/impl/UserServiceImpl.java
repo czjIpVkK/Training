@@ -21,4 +21,8 @@ public class UserServiceImpl implements UserService{
     public void add(User user) {
     userMapper.add(user);
     }
+
+    public void updateByPrimaryKeySelective(User user) {
+        userMapper.updateByPrimaryKeySelective(user);
+    }
 }

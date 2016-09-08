@@ -13,4 +13,48 @@
     insert into user (ut_id, u_name, u_PassWord)
     values (1, #{u_name}, #{u_PassWord} )
     </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.ynu.dto.User">
+        update user
+        <set>
+            <if test="ut_id != null">
+                ut_id = #{ut_id,jdbcType=INTEGER},
+            </if>
+            <if test="u_name != null">
+                u_name = #{u_name,jdbcType=VARCHAR},
+            </if>
+            <if test="u_birthday != null">
+                u_birthday = #{u_birthday,jdbcType=DATE},
+            </if>
+            <if test="u_Gender != null">
+                u_Gender = #{u_Gender,jdbcType=BIT},
+            </if>
+            <if test="u_description != null">
+                u_description = #{u_description,jdbcType=VARCHAR},
+            </if>
+            <if test="u_PassWord != null">
+                u_PassWord = #{u_PassWord,jdbcType=VARCHAR},
+            </if>
+            <if test="u_credits != null">
+                u_credits = #{u_credits,jdbcType=INTEGER},
+            </if>
+            <if test="u_balance != null">
+                u_balance = #{u_balance,jdbcType=DOUBLE},
+            </if>
+        </set>
+        where u_id = #{u_id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.ynu.dto.User">
+        update user
+        set ut_id = #{ut_id,jdbcType=INTEGER},
+        u_name = #{u_name,jdbcType=VARCHAR},
+        u_birthday = #{u_birthday,jdbcType=DATE},
+        u_Gender = #{u_Gender,jdbcType=BIT},
+        u_description = #{u_description,jdbcType=VARCHAR},
+        u_PassWord = #{u_PassWord,jdbcType=VARCHAR},
+        u_credits = #{u_credits,jdbcType=INTEGER},
+        u_balance = #{u_balance,jdbcType=DOUBLE}
+        where u_id = #{u_id,jdbcType=INTEGER}
+    </update>
 </mapper>

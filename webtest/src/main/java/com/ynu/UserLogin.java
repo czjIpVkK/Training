@@ -35,7 +35,7 @@ public class UserLogin {
                 return "login";
             } else {
                 if (user.getuPassword().equals(u_PassWord)) {
-                    session.setAttribute("sessionname", user.getuId());
+                    session.setAttribute("sessionname", u_name);
                     return "success";
                 } else {
                     model.addAttribute("msg", "用户名或密码错误");

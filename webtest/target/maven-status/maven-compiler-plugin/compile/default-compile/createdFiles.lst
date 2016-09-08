@@ -3,4 +3,5 @@ com\ynu\UserRegister.class
 com\ynu\service\UserService.class
 com\ynu\mapper\UserMapper.class
 com\ynu\UserLogin.class
+com\ynu\UserDetails.class
 com\ynu\service\impl\UserServiceImpl.class
