@@ -28,7 +28,7 @@ public class UserRegister {
     }
 
     @RequestMapping(value = "/userreg", method = RequestMethod.POST)
-    public String regester(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_PassWord,@RequestParam("pass1") String pass1, Model model, HttpSession session) {
+    public String regester(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_PassWord, @RequestParam("pass1") String pass1, Model model, HttpSession session) {
         System.out.println(u_name + "..." + u_PassWord + "..." + pass1);
         if (u_name.equals("") || u_PassWord.equals("") || pass1.equals("")) {
             model.addAttribute("msg", "用户名或密码不能为空");

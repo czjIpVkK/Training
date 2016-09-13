@@ -1,6 +1,9 @@
 package com.ynu.mapper;
 
 import com.ynu.dto.User;
+
+import java.util.List;
+
 /**
  * Created by Vivianus on 2016/9/6.
  */

@@ -1,6 +1,7 @@
 package com.ynu.service;
 
 import com.ynu.dto.User;
+
 /**
  * Created by Vivianus on 2016/9/6.
  */
