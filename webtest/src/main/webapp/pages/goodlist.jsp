@@ -93,7 +93,7 @@
                 <c:forEach var="goods" items="${goodsList}">
                     <tr>
                         <td>${goods.g_id }</td>
-                        <td>${goods.gt_type }</td>
+                        <td>${goods.gt_name }</td>
                         <td>${goods.g_name }</td>
                         <td>${goods.g_description }</td>
                         <td><img src="${goods.g_pic }"></td>

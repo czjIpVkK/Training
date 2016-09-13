@@ -17,7 +17,7 @@
         <input  name="g_id" type="hidden" class="form-control" value=${goods.g_id}>
         ${goods.g_name}
         <br>
-        ${goods.gt_type}
+        ${goods.gt_name}
         <br>
         ${goods.g_description}
         <br>

@@ -28,9 +28,9 @@ public class UserRegister {
     }
 
     @RequestMapping(value = "/userreg", method = RequestMethod.POST)
-    public String regester(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_PassWord, @RequestParam("pass1") String pass1, Model model, HttpSession session) {
-        System.out.println(u_name + "..." + u_PassWord + "..." + pass1);
-        if (u_name.equals("") || u_PassWord.equals("") || pass1.equals("")) {
+    public String regester(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_pass, @RequestParam("pass1") String pass1, Model model, HttpSession session) {
+        System.out.println(u_name + "..." + u_pass + "..." + pass1);
+        if (u_name.equals("") || u_pass.equals("") || pass1.equals("")) {
             model.addAttribute("msg", "用户名或密码不能为空");
             return "register";
         } else {
@@ -39,13 +39,13 @@ public class UserRegister {
                 model.addAttribute("msg", "用户名已经被占用");
                 return "register";
             } else {
-                if (!u_PassWord.equals(pass1)) {
+                if (!u_pass.equals(pass1)) {
                     model.addAttribute("msg", "两次输入的密码不一致！");
                     return "register";
                 } else {
                     User user1 = new User();
-                    user1.setuName(u_name);
-                    user1.setuPassword(u_PassWord);
+                    user1.setu_name(u_name);
+                    user1.setu_pass(u_pass);
                     userService.add(user1);
                     return "login";
                 }

@@ -5,12 +5,12 @@
 
 <mapper namespace="com.ynu.mapper.GoodsinformationMapper">
     <select id="select" resultType="com.ynu.dto.Goodsinformation">
-        select g.*,gt.gt_type from goodsinformation g,goodstype gt where
+        select g.*,gt.gt_name from goodsinformation g,goodstype gt where
         g.gt_id=gt.gt_id
     </select>
 
     <select id="find" resultType="com.ynu.dto.Goodsinformation">
-        select g.*,gt.gt_type from goodsinformation g,goodstype gt  where
+        select g.*,gt.gt_name from goodsinformation g,goodstype gt  where
         g_id = #{g_id} and g.gt_id=gt.gt_id
     </select>
 </mapper>

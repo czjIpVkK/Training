@@ -167,7 +167,7 @@ public final class goodlist_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${goods.g_id }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
             out.write("</td>\r\n");
             out.write("                        <td>");
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${goods.gt_type }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${goods.gt_name }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
             out.write("</td>\r\n");
             out.write("                        <td>");
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${goods.g_name }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));

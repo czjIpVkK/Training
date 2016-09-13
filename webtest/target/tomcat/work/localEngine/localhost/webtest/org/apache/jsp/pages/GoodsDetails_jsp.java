@@ -67,7 +67,7 @@ public final class GoodsDetails_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\r\n");
       out.write("        <br>\r\n");
       out.write("        ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${goods.gt_type}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${goods.gt_name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\r\n");
       out.write("        <br>\r\n");
       out.write("        ");

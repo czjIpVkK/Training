@@ -5,12 +5,13 @@
   Time: 9:55
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@page isELIgnored="false" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>会员信息编辑</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
             <input  name="u_birthday" type="date" class="form-control" placeholder="生日" value=${u_birthday}>
             <!--input  name="u_Gender" type="password" class="form-control"  placeholder="性别"-->
             <p>性别</p>
-            <select name="u_Gender">
+            <select name="u_gender">
                 <option value=1>男</option>
                 <option value=0>女</option>
             </select>
