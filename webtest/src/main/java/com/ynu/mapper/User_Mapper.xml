@@ -5,8 +5,8 @@
 
 <mapper namespace="com.ynu.mapper.UserMapper">
     <select id="find" resultType="com.ynu.dto.User">
-        select * from user where
-        u_name = #{u_name}
+        select u.*,ut.ut_name from user u,usertype ut
+         where u.u_name =#{u_name} and u.ut_id=ut.ut_id
     </select>
 
     <insert id="add" parameterType="com.ynu.dto.User">
@@ -41,6 +41,16 @@
             <if test="u_balance != null">
                 u_balance = #{u_balance,jdbcType=DOUBLE},
             </if>
+            <if test="u_mobile != null">
+                u_mobile = #{u_mobile,jdbcType=DOUBLE},
+            </if>
+            <if test="u_card_no != null">
+                u_card_no = #{u_card_no,jdbcType=DOUBLE},
+            </if>
+            <if test="u_address != null">
+                u_address = #{u_address,jdbcType=DOUBLE},
+            </if>
+
         </set>
         where u_id = #{u_id,jdbcType=INTEGER}
     </update>

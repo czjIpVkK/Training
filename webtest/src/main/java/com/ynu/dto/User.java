@@ -32,6 +32,16 @@ public class User {
 
     private Integer u_credits;
 
+    private String ut_name;
+
+    public String getut_name() {
+        return ut_name;
+    }
+
+    public void setut_name(String ut_name) {
+        this.ut_name = ut_name;
+    }
+
     public Integer getu_id() {
         return u_id;
     }

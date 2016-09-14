@@ -38,6 +38,15 @@ public class Goodsinformation {
 
     private String gt_name;
 
+    private String gs_name;
+
+    public String getgs_name(){
+        return this.gs_name;
+    }
+
+    public void setgs_name(String gs_name){
+        this.gs_name=gs_name;
+    }
     public Integer getg_id() {
         return g_id;
     }

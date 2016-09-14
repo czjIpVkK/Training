@@ -17,19 +17,24 @@
 <body>
 
     <form action="UpdateUserDetails" method="POST">
-            <input  name="u_id" type="text" class="form-control" value=${u_id}>
-            <input  name="u_name" type="text" class="form-control" value=${u_name}>
-            <input  name="ut_id" type="text" class="form-control" placeholder="用户种类" value=${ut_id}>
-            <input  name="u_birthday" type="date" class="form-control" placeholder="生日" value=${u_birthday}>
-            <!--input  name="u_Gender" type="password" class="form-control"  placeholder="性别"-->
+            <input  name="u_id" type="hidden" class="form-control" value=${u_id}>
+            <td>${u_name}</td>
+            <td><input  name="ut_name" type="text" class="form-control" value=${ut_name}></td>
+            <td><input  name="u_birthday" type="date" class="form-control"  value=${u_birthday}></td>
             <p>性别</p>
             <select name="u_gender">
                 <option value=1>男</option>
                 <option value=0>女</option>
             </select>
             <input  name="u_description" type="text" class="form-control"  placeholder="个人介绍" value=${u_description}>
-            <input  name="u_credits" type="text" class="form-control"  placeholder="积分" value=${u_credits}>
-            <input  name="u_balance" type="text" class="form-control"  placeholder="打折" value=${u_balance}>
+            <input  name="u_mobile" type="text" class="form-control"  placeholder="电话" value=${u_mobile}>
+            <input  name="u_address" type="text" class="form-control"  placeholder="地址" value=${u_address}>
+            <input  name="u_card_no" type="text" class="form-control"  placeholder="身份证" value=${u_card_no}>
+            <p>积分</p>
+            <p>${u_credits}</p>
+            <p>打折</p>
+            <p>${u_balance}</p>
+
             <button type="submit" class="btn btn-default">确认更改</button>
     </form>
 

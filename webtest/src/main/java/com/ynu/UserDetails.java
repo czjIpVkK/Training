@@ -39,7 +39,8 @@ public class UserDetails {
 //        UserService userService = (UserService) ac.getBean("UserServiceImpl");
         User user = userService.find(userName);
         model.addAttribute("u_id", user.getu_id());
-        model.addAttribute("ut_id", user.getut_id());
+        model.addAttribute("ut_name", user.getut_name());
+        System.out.print(user.getut_name());
         model.addAttribute("u_name", user.getu_name());
         String u_birthday = null;
         if (user.getu_birthday() != null) {
@@ -52,30 +53,35 @@ public class UserDetails {
         model.addAttribute("u_description", user.getu_description());
         model.addAttribute("u_credits", user.getu_credits());
         model.addAttribute("u_balance", user.getu_balance());
+        model.addAttribute("u_balance", user.getu_address());
+        model.addAttribute("u_balance", user.getu_card_no());
+        model.addAttribute("u_balance", user.getu_mobile());
+        model.addAttribute("u_balance", user.getu_isuse());
         return "UserDetails";
     }
 
     @RequestMapping(value = "/UpdateUserDetails", method = RequestMethod.POST)
     public String UpdateUserInfo(@RequestParam("u_id") int u_id,
-                                 @RequestParam("ut_id") int ut_id,
-                                 @RequestParam("u_name") String u_name,
+                                 @RequestParam("ut_name") String ut_name,
                                  @RequestParam("u_birthday") String u_birthday,
                                  @RequestParam("u_gender") int u_Gender,
                                  @RequestParam("u_description") String u_description,
-                                 @RequestParam("u_credits") int u_credits,
-                                 @RequestParam("u_balance") Double u_balance, Model model) throws ParseException {
+                                 @RequestParam("u_mobile") String u_mobile,
+                                 @RequestParam("u_card_no") String u_card_no,
+                                 @RequestParam("u_address") String u_address,
+                                  Model model) throws ParseException {
 
         User user = new User();
-        user.setu_balance(u_balance);
         user.setu_gender(u_Gender);
-        user.setu_credits(u_credits);
+        user.setu_mobile(u_mobile);
+        user.setu_card_no(u_card_no);
+        user.setu_address(u_address);
         user.setu_description(u_description);
         SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
         Date d = sim.parse(u_birthday);
         user.setu_birthday(d);
         user.setu_id(u_id);
-        user.setu_name(u_name);
-        user.setut_id(ut_id);
+        user.setut_name(ut_name);
         userService.updateByPrimaryKeySelective(user);
         model.addAttribute("msg", "成功");
         return "UserDetailsResult";
