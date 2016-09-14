@@ -97,6 +97,7 @@
                         <td>${goods.g_name }</td>
                         <td>${goods.g_description }</td>
                         <td><img src="${goods.g_pic }"></td>
+                        <td>${goods.gs_name }</td>
                         <td><a href="<%=basePath%>GoodsDetails?g_id=${goods.g_id }">商品详情</a></td>
                     </tr>
                 </c:forEach>
