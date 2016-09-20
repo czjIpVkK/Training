@@ -5,13 +5,13 @@
 
 <mapper namespace="com.ynu.mapper.UserMapper">
     <select id="find" resultType="com.ynu.dto.User">
-        select * from user where
-        u_name = #{u_name}
+        select u.*,ut.ut_name from user u,usertype ut
+         where u.u_name =#{u_name} and u.ut_id=ut.ut_id
     </select>
 
     <insert id="add" parameterType="com.ynu.dto.User">
-    insert into user (ut_id, u_name, u_PassWord)
-    values (1, #{u_name}, #{u_PassWord} )
+    insert into user (ut_id, u_name, u_pass)
+    values (1, #{u_name}, #{u_pass} )
     </insert>
 
     <update id="updateByPrimaryKeySelective" parameterType="com.ynu.dto.User">
@@ -26,14 +26,14 @@
             <if test="u_birthday != null">
                 u_birthday = #{u_birthday,jdbcType=DATE},
             </if>
-            <if test="u_Gender != null">
-                u_Gender = #{u_Gender,jdbcType=BIT},
+            <if test="u_gender != null">
+                u_gender = #{u_gender,jdbcType=BIT},
             </if>
             <if test="u_description != null">
                 u_description = #{u_description,jdbcType=VARCHAR},
             </if>
-            <if test="u_PassWord != null">
-                u_PassWord = #{u_PassWord,jdbcType=VARCHAR},
+            <if test="u_pass != null">
+                u_pass = #{u_pass,jdbcType=VARCHAR},
             </if>
             <if test="u_credits != null">
                 u_credits = #{u_credits,jdbcType=INTEGER},
@@ -41,6 +41,16 @@
             <if test="u_balance != null">
                 u_balance = #{u_balance,jdbcType=DOUBLE},
             </if>
+            <if test="u_mobile != null">
+                u_mobile = #{u_mobile,jdbcType=DOUBLE},
+            </if>
+            <if test="u_card_no != null">
+                u_card_no = #{u_card_no,jdbcType=DOUBLE},
+            </if>
+            <if test="u_address != null">
+                u_address = #{u_address,jdbcType=DOUBLE},
+            </if>
+
         </set>
         where u_id = #{u_id,jdbcType=INTEGER}
     </update>
@@ -50,9 +60,9 @@
         set ut_id = #{ut_id,jdbcType=INTEGER},
         u_name = #{u_name,jdbcType=VARCHAR},
         u_birthday = #{u_birthday,jdbcType=DATE},
-        u_Gender = #{u_Gender,jdbcType=BIT},
+        u_gender = #{u_gender,jdbcType=BIT},
         u_description = #{u_description,jdbcType=VARCHAR},
-        u_PassWord = #{u_PassWord,jdbcType=VARCHAR},
+        u_pass = #{u_pass,jdbcType=VARCHAR},
         u_credits = #{u_credits,jdbcType=INTEGER},
         u_balance = #{u_balance,jdbcType=DOUBLE}
         where u_id = #{u_id,jdbcType=INTEGER}

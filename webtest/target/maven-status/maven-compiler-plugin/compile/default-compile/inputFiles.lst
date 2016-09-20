@@ -1,7 +1,14 @@
-E:\webtest\src\main\java\com\ynu\UserLogin.java
-E:\webtest\src\main\java\com\ynu\UserDetails.java
-E:\webtest\src\main\java\com\ynu\UserRegister.java
-E:\webtest\src\main\java\com\ynu\dto\User.java
-E:\webtest\src\main\java\com\ynu\mapper\UserMapper.java
-E:\webtest\src\main\java\com\ynu\service\impl\UserServiceImpl.java
-E:\webtest\src\main\java\com\ynu\service\UserService.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\UserRegister.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\GoodList.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\mapper\UserMapper.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\UserDetails.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\service\impl\GoodinformationServiceImpl.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\mapper\GoodsinformationMapper.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\GoodsDetails.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\service\UserService.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\service\impl\UserServiceImpl.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\dto\Page.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\dto\User.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\UserLogin.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\service\GoodinformationService.java
+E:\Space For IDEA\webtest\src\main\java\com\ynu\dto\Goodsinformation.java

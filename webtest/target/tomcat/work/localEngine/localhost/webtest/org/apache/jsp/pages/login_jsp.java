@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class UserDetailsResult_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -40,7 +40,7 @@ public final class UserDetailsResult_jsp extends org.apache.jasper.runtime.HttpJ
 
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html; charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -53,13 +53,41 @@ public final class UserDetailsResult_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
-      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\r\n");
-      out.write("    <title>用户信息</title>\r\n");
+      out.write("    <title>123</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
+      out.write("<div>\r\n");
+      out.write("    <div>\r\n");
       out.write("\r\n");
+      out.write("        <form id=\"slick-login\" action=\"/webtest/logins\" method=\"POST\" class=\"form-horizontal\">\r\n");
+      out.write("            <div style=\"color:red\">");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${msg}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("</div>\r\n");
+      out.write("            <div class=\"form-group\">\r\n");
+      out.write("\r\n");
+      out.write("                <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">用户名</label>\r\n");
+      out.write("                <div class=\"col-sm-10\">\r\n");
+      out.write("                    <input  name=\"u_name\" type=\"text\" class=\"form-control\" id=\"inputEmail3\" placeholder=\"用户名\">\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"form-group\">\r\n");
+      out.write("                <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">密码</label>\r\n");
+      out.write("                <div class=\"col-sm-10\">\r\n");
+      out.write("                    <input  name=\"pass\" type=\"password\" class=\"form-control\" id=\"inputPassword3\" placeholder=\"密码\">\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"form-group\">\r\n");
+      out.write("                <div class=\"col-sm-offset-2 col-sm-10\">\r\n");
+      out.write("                    <button type=\"submit\" class=\"btn btn-default\">登录</button>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </form>\r\n");
+      out.write("\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

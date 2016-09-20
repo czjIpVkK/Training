@@ -23,9 +23,9 @@ public class UserLogin {
     private UserService userService;
 
     @RequestMapping(value = "/logins", method = RequestMethod.POST)
-    public String loginCheck(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_PassWord, Model model, HttpSession session) {
-        System.out.println(u_name + "..." + u_PassWord);
-        if (u_name.equals("") || u_PassWord.equals("")) {
+    public String loginCheck(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_pass, Model model, HttpSession session) {
+        System.out.println(u_name + "..." + u_pass);
+        if (u_name.equals("") || u_pass.equals("")) {
             model.addAttribute("msg", "用户名或密码不能为空");
             return "login";
         } else {
@@ -34,7 +34,7 @@ public class UserLogin {
                 model.addAttribute("msg", "用户名或密码错误");
                 return "login";
             } else {
-                if (user.getuPassword().equals(u_PassWord)) {
+                if (user.getu_pass().equals(u_pass)) {
                     session.setAttribute("sessionname", u_name);
                     return "success";
                 } else {

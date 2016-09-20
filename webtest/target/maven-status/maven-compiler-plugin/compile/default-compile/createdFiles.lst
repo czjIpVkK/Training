@@ -2,6 +2,13 @@ com\ynu\dto\User.class
 com\ynu\UserRegister.class
 com\ynu\service\UserService.class
 com\ynu\mapper\UserMapper.class
+com\ynu\GoodList.class
 com\ynu\UserLogin.class
+com\ynu\GoodsDetails.class
 com\ynu\UserDetails.class
+com\ynu\service\GoodinformationService.class
+com\ynu\dto\Page.class
+com\ynu\dto\Goodsinformation.class
+com\ynu\mapper\GoodsinformationMapper.class
+com\ynu\service\impl\GoodinformationServiceImpl.class
 com\ynu\service\impl\UserServiceImpl.class
