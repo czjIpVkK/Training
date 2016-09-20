@@ -8,6 +8,15 @@
         select u.*,ut.ut_name from user u,usertype ut
          where u.u_name =#{u_name} and u.ut_id=ut.ut_id
     </select>
+    <select id="select" resultType="com.ynu.dto.User">
+        select u.*,ut.ut_name from user u,usertype ut
+         where u.ut_id=ut.ut_id
+    </select>
+    <select id="findTypeId" resultType="java.lang.Integer">
+        select ut_id from usertype
+        where ut_name=#{ut_name}
+    </select>
+
 
     <insert id="add" parameterType="com.ynu.dto.User">
     insert into user (ut_id, u_name, u_pass)
@@ -67,4 +76,8 @@
         u_balance = #{u_balance,jdbcType=DOUBLE}
         where u_id = #{u_id,jdbcType=INTEGER}
     </update>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from user
+        where u_id = #{uId,jdbcType=INTEGER}
+    </delete>
 </mapper>

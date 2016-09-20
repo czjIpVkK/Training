@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynu.mapper.GoodstypeMapper">
+
+
+  <select id="selectAllType" parameterType="java.lang.Integer" resultType="com.ynu.dto.Goodstype">
+    select *
+    from goodstype
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.ynu.dto.Goodstype">
+    select *
+    from goodstype
+    where gt_id = #{gt_id,jdbcType=INTEGER}
+  </select>
+  <select id="selectChildren" parameterType="java.lang.Integer" resultType="com.ynu.dto.Goodstype">
+    select gt.*,gpt.gt_name as gt_parent_name
+    from goodstype gt,goodstype gpt
+    where gt.gt_parent_id =#{gt_id,jdbcType=INTEGER}  and gpt.gt_id=gt.gt_parent_id
+  </select>
+  <select id="findFather" parameterType="java.lang.Integer" resultType="com.ynu.dto.Goodstype">
+    select gt.*,gpt.gt_name as gt_parent_name
+    from goodstype gt,goodstype gpt
+    where gt.gt_id =#{gt_id,jdbcType=INTEGER}  and gpt.gt_id=gt.gt_parent_id
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from goodstype
+    where gt_id = #{gt_id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ynu.dto.Goodstype">
+    insert into goodstype (gt_id, gt_parent_id, gt_name, 
+      gt_isvisible, gt_desc)
+    values (#{gt_id,jdbcType=INTEGER}, #{gt_parent_id,jdbcType=VARCHAR}, #{gt_name,jdbcType=VARCHAR}, 
+      #{gt_isvisible,jdbcType=INTEGER}, #{gt_desc,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ynu.dto.Goodstype">
+    insert into goodstype
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gt_id != null">
+        gt_id,
+      </if>
+      <if test="gt_parent_id != null">
+        gt_parent_id,
+      </if>
+      <if test="gt_name != null">
+        gt_name,
+      </if>
+      <if test="gt_isvisible != null">
+        gt_isvisible,
+      </if>
+      <if test="gt_desc != null">
+        gt_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gt_id != null">
+        #{gt_id,jdbcType=INTEGER},
+      </if>
+      <if test="gt_parent_id != null">
+        #{gt_parent_id,jdbcType=VARCHAR},
+      </if>
+      <if test="gt_name != null">
+        #{gt_name,jdbcType=VARCHAR},
+      </if>
+      <if test="gt_isvisible != null">
+        #{gt_isvisible,jdbcType=INTEGER},
+      </if>
+      <if test="gt_desc != null">
+        #{gt_desc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ynu.dto.Goodstype">
+    update goodstype
+    <set>
+      <if test="gt_parent_id != null">
+        gt_parent_id = #{gt_parent_id,jdbcType=VARCHAR},
+      </if>
+      <if test="gt_name != null">
+        gt_name = #{gt_name,jdbcType=VARCHAR},
+      </if>
+      <if test="gt_isvisible != null">
+        gt_isvisible = #{gt_isvisible,jdbcType=INTEGER},
+      </if>
+      <if test="gt_desc != null">
+        gt_desc = #{gt_desc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where gt_id = #{gt_id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

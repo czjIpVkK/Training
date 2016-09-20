@@ -14,4 +14,10 @@ public interface UserMapper {
     public void add(User user);
 
     public void updateByPrimaryKeySelective(User user);
+
+    public void deleteByPrimaryKey(int u_id);
+
+    public List<User> select();
+
+    public int findTypeId(String ut_name);
 }

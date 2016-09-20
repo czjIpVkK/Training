@@ -1,45 +1,147 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Vivianus
-  Date: 2016/9/6
-  Time: 14:22
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@page isELIgnored="false" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-    <title>123</title>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="<%=request.getContextPath() %>/pages/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="<%=request.getContextPath() %>/pages/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-<div>
-    <div>
-
-        <form id="slick-login" action="/webtest/logins" method="POST" class="form-horizontal">
-            <div style="color:red">${msg}</div>
-            <div class="form-group">
-
-                <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
-                <div class="col-sm-10">
-                    <input  name="u_name" type="text" class="form-control" id="inputEmail3" placeholder="用户名">
-                </div>
+<div class="header">
+    <div class="header_top">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="<%=request.getContextPath() %>/pages/images/logo.png" alt=""/></a>
             </div>
-            <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
-                <div class="col-sm-10">
-                    <input  name="pass" type="password" class="form-control" id="inputPassword3" placeholder="密码">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">登录</button>
-                </div>
-            </div>
-        </form>
-
+            <ul class="shopping_grid">
+                <a href="#"><li>Join</li></a>
+                <a href="login.html"><li>Sign In</li></a>
+                <a href="#"><li><span class="m_1">Shopping Bag</span>&nbsp;&nbsp;(0) &nbsp;<img src="<%=request.getContextPath() %>/pages/images/bag.png" alt=""/></li></a>
+                <div class="clearfix"> </div>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="h_menu4"><!-- start h_menu4 -->
+        <div class="container">
+            <a class="toggleMenu" href="#">Menu</a>
+            <ul class="nav">
+                <li><a href="index.html" data-hover="Home">Home</a></li>
+                <li><a href="about.html" data-hover="About Us">About Us</a></li>
+                <li><a href="careers.html" data-hover="Careers">Careers</a></li>
+                <li><a href="contact.html" data-hover="Contact Us">Contact Us</a></li>
+                <li><a href="404.html" data-hover="Company Profile">Company Profile</a></li>
+                <li><a href="register.html" data-hover="Company Registration">Company Registration</a></li>
+                <li><a href="wishlist.html" data-hover="Wish List">Wish List</a></li>
+            </ul>
+            <script type="text/javascript" src="js/nav.js"></script>
+        </div><!-- end h_menu4 -->
     </div>
 </div>
+<div class="column_center">
+    <div class="container">
+        <div class="search">
+            <div class="stay">Search Product</div>
+            <div class="stay_right">
+                <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                <input type="submit" value="">
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="about">
+    <div class="container">
+        <div class="register">
+            <div class="col-md-6 login-left">
+                <h3>NEW CUSTOMERS</h3>
+                <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                <a class="acount-btn" href="http://localhost:8080/webtest/reg">Create an Account</a>
+            </div>
+            <div class="col-md-6 login-right">
+                <h3>REGISTERED CUSTOMERS</h3>
+                <p>If you have an account with us, please log in.</p>
+                <form id="slick-login" action="/webtest/logins" method="POST" >
+                    <div>
+                        <span>Email Address<label>*</label></span>
+                        <input  name="u_name" type="text" >
+                    </div>
+                    <div>
+                        <span>Password<label>*</label></span>
+                        <input  name="pass" type="text" >
+                    </div>
+                    <a class="forgot" href="#">Forgot Your Password?</a>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="footer_bg">
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="col-md-3 f_grid1">
+            <h3>About</h3>
+            <a href="#"><img src="<%=request.getContextPath() %>/pages/images/logo.png" alt=""/></a>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+        </div>
+        <div class="col-md-3 f_grid1 f_grid2">
+            <h3>Follow Us</h3>
+            <ul class="social">
+                <li><a href=""> <i class="fb"> </i><p class="m_3">Facebook</p><div class="clearfix"> </div></a></li>
+                <li><a href=""><i class="tw"> </i><p class="m_3">Twittter</p><div class="clearfix"> </div></a></li>
+                <li><a href=""><i class="google"> </i><p class="m_3">Google</p><div class="clearfix"> </div></a></li>
+                <li><a href=""><i class="instagram"> </i><p class="m_3">Instagram</p><div class="clearfix"> </div></a></li>
+            </ul>
+        </div>
+        <div class="col-md-6 f_grid3">
+            <h3>Contact Info</h3>
+            <ul class="list">
+                <li><p>Phone : 1.800.254.5487</p></li>
+                <li><p>Fax : 1.800.254.2548</p></li>
+                <li><p>Email : <a href="mailto:info(at)fashionpress.com"> info(at)fashionpress.com</a></p></li>
+            </ul>
+            <ul class="list1">
+                <li><p>Aliquam augue a bibendum ipsum diam, semper porttitor libero elit egestas gravida, ut quam, nunc taciti</p></li>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="footer_bottom">
+    <div class="container">
+        <div class="cssmenu">
+            <ul>
+                <li class="active"><a href="login.html">Privacy Policy</a></li> .
+                <li><a href="checkout.html">Terms of Service</a></li> .
+                <li><a href="checkout.html">Creative Rights Policy</a></li> .
+                <li><a href="login.html">Contact Us</a></li> .
+                <li><a href="register.html">Support & FAQ</a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>

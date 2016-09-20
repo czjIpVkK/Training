@@ -3,7 +3,6 @@ package com.ynu;
 import javax.servlet.http.HttpSession;
 
 import com.ynu.dto.Goodsinformation;
-import com.ynu.dto.Goodsinformation;
 import com.ynu.service.GoodinformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -44,7 +43,16 @@ public class GoodList {
         getSubList(goods, model);
         return "goodlist";
     }
+    @RequestMapping(value = "/showgoods", method = RequestMethod.GET)
+    public String selectAllCustomer1(Model model) {
 
+        this.page = new Page();
+        List<Goodsinformation> goods = goodinformationService.select();
+        GoodsinformationList = goods;
+        getPage(goods, model);
+        getSubList(goods, model);
+        return "GoodsListsForAdmin";
+    }
     @RequestMapping(value = "turnPage")
     public String turnPage(@ModelAttribute("page") @Valid Page page, Model model) {
         System.out.println("------------------------------->turnPage");
@@ -71,4 +79,10 @@ public class GoodList {
         page.setTotalPage(totalPage);
         model.addAttribute("page", page);
     }
+    @RequestMapping(value = "/deleteGoods", method = RequestMethod.GET)
+    public void deleteGoods(@RequestParam("g_id") int g_id, Model model){
+        goodinformationService.deleteGoods(g_id);
+        selectAllCustomer1(model);
+    }
+
 }

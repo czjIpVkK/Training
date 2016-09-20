@@ -21,7 +21,10 @@ import com.ynu.service.UserService;
 public class UserLogin {
     @Autowired
     private UserService userService;
-
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(){
+        return "login";
+    }
     @RequestMapping(value = "/logins", method = RequestMethod.POST)
     public String loginCheck(@RequestParam("u_name") String u_name, @RequestParam("pass") String u_pass, Model model, HttpSession session) {
         System.out.println(u_name + "..." + u_pass);
@@ -36,6 +39,7 @@ public class UserLogin {
             } else {
                 if (user.getu_pass().equals(u_pass)) {
                     session.setAttribute("sessionname", u_name);
+                    session.setAttribute("type", "user");
                     return "success";
                 } else {
                     model.addAttribute("msg", "用户名或密码错误");

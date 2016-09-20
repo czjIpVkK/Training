@@ -12,5 +12,6 @@ public interface GoodinformationService {
     public List<Goodsinformation> select();
 
     public Goodsinformation find(String u_name);
-
+    public void deleteGoods(int g_id);
+    public void UpdateGoods(Goodsinformation goodsinformation);
 }

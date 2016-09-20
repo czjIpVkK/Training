@@ -47,16 +47,17 @@ public class UserDetails {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             u_birthday = formatter.format(user.getu_birthday());
         }
-        System.out.print(u_birthday);
+
         model.addAttribute("u_birthday", u_birthday);
         model.addAttribute("u_Gender", user.getu_gender());
         model.addAttribute("u_description", user.getu_description());
         model.addAttribute("u_credits", user.getu_credits());
         model.addAttribute("u_balance", user.getu_balance());
-        model.addAttribute("u_balance", user.getu_address());
-        model.addAttribute("u_balance", user.getu_card_no());
-        model.addAttribute("u_balance", user.getu_mobile());
-        model.addAttribute("u_balance", user.getu_isuse());
+        model.addAttribute("u_address", user.getu_address());
+        model.addAttribute("u_card_no", user.getu_card_no());
+        model.addAttribute("u_mobile", user.getu_mobile());
+        System.out.print(user.getu_mobile());
+        model.addAttribute("u_isuse", user.getu_isuse());
         return "UserDetails";
     }
 

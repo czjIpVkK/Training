@@ -13,4 +13,56 @@
         select g.*,gt.gt_name from goodsinformation g,goodstype gt  where
         g_id = #{g_id} and g.gt_id=gt.gt_id
     </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from goodsinformation
+        where g_id = #{g_id,jdbcType=INTEGER}
+    </delete>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ynu.dto.Goodsinformation">
+        update goodsinformation
+        <set>
+            <if test="gt_id != null">
+                gt_id = #{gt_id,jdbcType=INTEGER},
+            </if>
+            <if test="gs_id != null">
+                gs_id = #{gs_id,jdbcType=INTEGER},
+            </if>
+            <if test="g_name != null">
+                g_name = #{g_name,jdbcType=VARCHAR},
+            </if>
+            <if test="g_number != null">
+                g_number = #{g_number,jdbcType=INTEGER},
+            </if>
+            <if test="g_sellnumber != null">
+                g_sellnumber = #{g_sellnumber,jdbcType=INTEGER},
+            </if>
+            <if test="g_now_number != null">
+                g_now_number = #{g_now_number,jdbcType=INTEGER},
+            </if>
+            <if test="g_price != null">
+                g_price = #{g_price,jdbcType=REAL},
+            </if>
+            <if test="g_pic != null">
+                g_pic = #{g_pic,jdbcType=VARCHAR},
+            </if>
+            <if test="g_state != null">
+                g_state = #{g_state,jdbcType=VARCHAR},
+            </if>
+            <if test="g_uptime != null">
+                g_uptime = #{g_uptime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="g_uper != null">
+                g_uper = #{g_uper,jdbcType=INTEGER},
+            </if>
+            <if test="g_modify_time != null">
+                g_modify_time = #{g_modify_time,jdbcType=TIMESTAMP},
+            </if>
+            <if test="g_modfier != null">
+                g_modfier = #{g_modfier,jdbcType=INTEGER},
+            </if>
+            <if test="g_description != null">
+                g_description = #{g_description,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where g_id = #{g_id,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -13,6 +13,7 @@
     <title>用户信息</title>
 </head>
 <body>
-
+<p>修改成功！</p>
+<button class="btn btn-default" type="button" onclick="location='showuser'"> 返回</button>
 </body>
 </html>

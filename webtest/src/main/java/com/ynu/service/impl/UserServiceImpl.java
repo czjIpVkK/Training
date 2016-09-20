@@ -6,6 +6,8 @@ import com.ynu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Vivianus on 2016/9/6.
  */
@@ -25,5 +27,11 @@ public class UserServiceImpl implements UserService {
 
     public void updateByPrimaryKeySelective(User user) {
         userMapper.updateByPrimaryKeySelective(user);
+    }
+    public List<User> select() {
+        return userMapper.select();
+    }
+    public int finTypeId(String ut_name){
+        return userMapper.findTypeId(ut_name);
     }
 }

@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface GoodsinformationMapper {
     public List<Goodsinformation> select();
-
+   public void updateByPrimaryKeySelective(Goodsinformation goodsinformation);
     public Goodsinformation find(String u_name);
+    public void deleteByPrimaryKey(int g_id);
 }

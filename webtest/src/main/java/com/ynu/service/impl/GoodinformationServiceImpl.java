@@ -24,4 +24,13 @@ public class GoodinformationServiceImpl implements GoodinformationService{
     public Goodsinformation find(String u_name){
         return goodsinformationMapper.find(u_name);
     }
+    public void deleteGoods(int g_id){
+        goodsinformationMapper.deleteByPrimaryKey(g_id);
+
+    }
+    public void UpdateGoods(Goodsinformation goodsinformation){
+        goodsinformationMapper.updateByPrimaryKeySelective(goodsinformation);
+    }
+
+
 }
